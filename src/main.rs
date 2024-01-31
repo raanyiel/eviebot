@@ -33,10 +33,11 @@ async fn my_help(
 }
 
 #[group]
-#[commands(avatar)]
+#[commands(avatar, purge)]
 struct Utility;
 mod commands;
 use commands::avatar::*;
+use commands::purge::*;
 
 #[group]
 #[commands(gay)]
@@ -66,6 +67,8 @@ async fn main() {
         .framework(framework)
         .await
         .expect("Error creating client");
+
+        
 
     if let Err(why) = client.start().await {
         println!("An error occurred while running the client: {:?}", why);
