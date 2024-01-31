@@ -6,7 +6,7 @@ use serenity::{
 
 #[command]
 #[description = "Fetches a users avatar for you!!"]
-#[usage = ".avatar (user)"]
+#[usage = "(user)"]
 async fn avatar(ctx: &Context, msg: &Message) -> CommandResult {
     let user = msg.mentions.first().unwrap_or(&msg.author);
     let avatar_url = user.face();

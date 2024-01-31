@@ -13,7 +13,7 @@ fn gen() -> i8 {
 
 #[command]
 #[description = "Calculates using trans magic to identify how gay you are! <3"]
-#[usage = ".gay"]
+#[usage = ""]
 async fn gay(ctx: &Context, msg: &Message) -> CommandResult {
     let r = gen();
     let c = format!("You are {}% gay!", r);
