@@ -1,5 +1,5 @@
 use serenity::{
- all::standard::Args, framework::standard::{macros::command, CommandResult}, futures::StreamExt, model::channel::Message, prelude::*
+ all::standard::Args, framework::standard::{macros::command, CommandResult}, futures::StreamExt, model::channel::Message, prelude::*,
 };
 
 
@@ -13,7 +13,7 @@ async fn purge(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
     let mut messages = history.take(num_messages as usize + 1);
     while let Some(message_result) = messages.next().await {
         match message_result {
-            Ok(message) => message.delete(&ctx.http).await.expect("meow"),
+            Ok(message) => message.delete(&ctx.http).await.unwrap_or_else(|err| eprintln!("meow: {}", err)),
             Err(_error) => eprintln!("what"),
         }
     }
