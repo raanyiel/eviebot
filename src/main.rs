@@ -14,7 +14,7 @@ use std::collections::HashSet;
 use std::env;
 
 #[help]
-#[individual_command_tip = "Nya <3, here's a list of shit I can do!"]
+#[individual_command_tip = "Nya <3, here's a list of shit I can do! P.S. commands with <> args are required and commands with () args are optional!"]
 #[strikethrough_commands_tip_in_guild = ""]
 #[strikethrough_commands_tip_in_dm = ""]
 #[lacking_permissions = "hide"]
